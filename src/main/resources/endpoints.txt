@@ -1,0 +1,35 @@
+1.
+    - Get all customers
+    - GET /customers
+    - no param
+    - list of customers(JSON response) 
+
+2.    
+    - Get a customer by ID
+    - GET /customers/{id}
+    - no param
+    if ok(customer exists)
+    - customer finded by id(JSON response) 
+    else (customer doesn't exist)
+    - 500 : Internal Server Error 
+3.
+    - Save new customer in DB
+    - POST /customers
+    - new Customer(JSON body)  
+    - saved customer(JSON response)
+
+4.
+    - Update customer   
+    - PUT /customers
+    - edted customer(JSON body) 
+    - edited customer(JSON response) 
+
+5.  
+    - Delete customer 
+    - DELETE /customers/{id} 
+    - no param
+    if ok (customer exists)
+    - Text(customer with id {id} was deleted)
+    else (customer doesnt exists) 
+    - 500 : Internal Server Error 
+       
