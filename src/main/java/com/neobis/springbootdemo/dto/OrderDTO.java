@@ -8,6 +8,15 @@ public class OrderDTO {
     private Date orderDate;
     private double totalAmount;
 
+    public OrderDTO() {
+    }
+
+    public OrderDTO(Long orderId, Long customerId, Date orderDate, double totalAmount) {
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.orderDate = orderDate;
+        this.totalAmount = totalAmount;
+    }
 
     public Long getOrderId() {
         return orderId;

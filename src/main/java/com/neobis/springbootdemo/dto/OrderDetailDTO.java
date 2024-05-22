@@ -9,6 +9,17 @@ public class OrderDetailDTO {
     private int quantity;
     private double price;
 
+    public OrderDetailDTO() {
+    }
+
+    public OrderDetailDTO(Long detailId, Long orderId, Long bookId, int quantity, double price) {
+        this.detailId = detailId;
+        this.orderId = orderId;
+        this.bookId = bookId;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
     public Long getDetailId() {
         return detailId;
     }
