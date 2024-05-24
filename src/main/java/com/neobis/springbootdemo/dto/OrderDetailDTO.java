@@ -1,6 +1,5 @@
 package com.neobis.springbootdemo.dto;
 
-import jakarta.persistence.Column;
 
 public class OrderDetailDTO {
     private Long detailId;
