@@ -8,11 +8,22 @@ import lombok.Setter;
 
 import java.util.Set;
 
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table(name="users")
 public class User {
+
+    public User() {
+
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
