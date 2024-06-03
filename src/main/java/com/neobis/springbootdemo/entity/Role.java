@@ -10,7 +10,6 @@ import lombok.*;
 public class Role {
 
     public Role() {
-
     }
 
     @Id
@@ -21,4 +20,6 @@ public class Role {
 
     public Role(String roleUser) {
     }
+
+
 }

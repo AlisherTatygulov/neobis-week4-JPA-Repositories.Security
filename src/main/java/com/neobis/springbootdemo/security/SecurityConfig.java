@@ -42,11 +42,18 @@ public class SecurityConfig  {
                 configurer
                         .requestMatchers(HttpMethod.GET, "test/user").hasRole("USER")
                         .requestMatchers(HttpMethod.GET, "test/admin").hasRole("ADMIN")
+                        .requestMatchers("customers/**").permitAll()
+                        .requestMatchers("books/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/customers").hasRole("ADMIN")
                         .anyRequest().permitAll())
 
                         .formLogin(formLogin -> formLogin
                         .loginPage("/login")
-                        .permitAll());
+                        .failureUrl("/login?error=true")
+                        .permitAll())
+
+                        .csrf().disable();
+
 
 
         http.httpBasic(Customizer.withDefaults());

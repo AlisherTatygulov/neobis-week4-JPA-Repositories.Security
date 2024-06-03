@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class OrderMapper {
-    public OrderDTO toDTO(Order order) {
+    public static OrderDTO toDTO(Order order) {
         if (order == null) {
             return null;
         }
@@ -20,7 +20,7 @@ public class OrderMapper {
         return orderDTO;
     }
 
-    public Order toEntity(OrderDTO orderDTO) {
+    public static Order toEntity(OrderDTO orderDTO) {
         if (orderDTO == null) {
             return null;
         }
@@ -34,21 +34,23 @@ public class OrderMapper {
         return order;
     }
 
-    public List<OrderDTO> toDTOList(List<Order> orders) {
+    public static List<OrderDTO> toDTOList(List<Order> orders) {
         if (orders == null) {
             return null;
         }
         return orders.stream()
-                .map(this::toDTO)
+                .map(OrderMapper::toDTO)
                 .collect(Collectors.toList());
+
+
     }
 
-    public List<Order> toEntityList(List<OrderDTO> orderDTOs) {
+    public static List<Order> toEntityList(List<OrderDTO> orderDTOs) {
         if (orderDTOs == null) {
             return null;
         }
         return orderDTOs.stream()
-                .map(this::toEntity)
+                .map(OrderMapper::toEntity)
                 .collect(Collectors.toList());
     }
 }

@@ -29,12 +29,14 @@ public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
     public void saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        Role userRole = roleRepository.findByName("ROLE_USER");
+       Role userRole = roleRepository.findByName("ROLE_USER");
         if (userRole == null) {
             userRole = new Role("ROLE_USER");
             roleRepository.save(userRole);
         }
         user.getRoles().add(userRole);
+
+        
 
         userRepository.save(user);
     }
