@@ -1,8 +1,6 @@
 package com.neobis.springbootdemo.dto;
 
 
-
-
 public class CustomerDTO {
 
     private Long customerId;

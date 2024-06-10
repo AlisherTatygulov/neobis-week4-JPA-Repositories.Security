@@ -1,26 +1,22 @@
-package com.neobis.springbootdemo.entity;
-
-import jakarta.persistence.*;
+package com.neobis.springbootdemo.dto;
 
 import java.sql.Date;
 
-@Entity
-@Table(name = "orders")
-public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_id")
+public class OrderDTO {
     private Long orderId;
-
-    @Column(name = "customer_id")
     private Long customerId;
-
-    @Column(name = "order_date")
     private Date orderDate;
-
-    @Column(name = "total_amount")
     private double totalAmount;
 
+    public OrderDTO() {
+    }
+
+    public OrderDTO(Long orderId, Long customerId, Date orderDate, double totalAmount) {
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.orderDate = orderDate;
+        this.totalAmount = totalAmount;
+    }
 
     public Long getOrderId() {
         return orderId;
@@ -54,4 +50,3 @@ public class Order {
         this.totalAmount = totalAmount;
     }
 }
-

@@ -49,7 +49,6 @@ public class CustomerMapper {
                 .collect(Collectors.toList());
     }
 
-    // Метод для преобразования List<CustomerDTO> в List<Customer>
     public static List<Customer> toEntityList(List<CustomerDTO> customerDTOs) {
         if (customerDTOs == null) {
             return null;
