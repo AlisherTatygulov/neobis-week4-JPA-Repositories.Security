@@ -11,7 +11,7 @@ public interface CustomerService {
 
     CustomerDTO findById(long theId);
 
-    CustomerDTO save(Customer theEmployee);
+    CustomerDTO save(Customer theCustomer);
 
     void deleteById(long theId);
 

@@ -40,12 +40,15 @@ public class SecurityConfig  {
 
         http.authorizeHttpRequests(configurer ->
                 configurer
-                        .requestMatchers(HttpMethod.GET, "test/user").hasRole("USER")
+                        /*.requestMatchers(HttpMethod.GET, "test/user").hasRole("USER")
                         .requestMatchers(HttpMethod.GET, "test/admin").hasRole("ADMIN")
                         .requestMatchers("customers/**").permitAll()
                         .requestMatchers("books/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/customers").hasRole("ADMIN")
-                        .anyRequest().permitAll())
+                        .anyRequest().permitAll())*/
+
+                        .requestMatchers("/**").permitAll())
+
 
                         .formLogin(formLogin -> formLogin
                         .loginPage("/login")

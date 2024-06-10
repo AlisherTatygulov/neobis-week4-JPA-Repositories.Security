@@ -67,10 +67,4 @@ public class BookController {
         bookService.deleteById(bookId);
         return "Book with id " + bookId + " was deleted";
     }
-
-
-
-
-
-
 }
